@@ -13,12 +13,7 @@
     <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
          Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
          Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
-    <description>
-        JadeHelper
-        帮助快速生成代码的插件
-        只需要输入SQL就可以自动转换成代码
-        可以自定义模板，任何格式代码都可以生成
-    </description>
+    <description>A plugin to assist in quickly generating code. Simply input SQL, and it automatically converts into code. Customize templates to generate code in any desired format.</description>
 
     <depends>com.intellij.modules.platform</depends>
     <!--通过类生成代码，需要依赖Java插件-->
@@ -60,11 +55,11 @@
             <!--生成代码菜单-->
             <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
         </group>
-<!--        <action id="MainAction" class="com.zhipin.jadehelper.action.BCodeAction" text="测试Aciton"-->
-<!--                description="Test action">-->
-<!--            <keyboard-shortcut keymap="$default" first-keystroke="alt G"/>-->
-<!--            <add-to-group group-id="GenerateGroup" anchor="last"/>-->
-<!--        </action>-->
+        <!--        <action id="MainAction" class="com.zhipin.jadehelper.action.BCodeAction" text="测试Aciton"-->
+        <!--                description="Test action">-->
+        <!--            <keyboard-shortcut keymap="$default" first-keystroke="alt G"/>-->
+        <!--            <add-to-group group-id="GenerateGroup" anchor="last"/>-->
+        <!--        </action>-->
         <action id="GenerateCode" class="com.zhipin.jadehelper.action.JadeHelperMainAction" text="生成代码">
             <add-to-group group-id="ToolsMenu" anchor="first"/>
         </action>
