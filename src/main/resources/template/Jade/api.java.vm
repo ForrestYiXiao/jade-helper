@@ -1,0 +1,69 @@
+##定义初始变量
+#set($tableName = $tool.append($tableInfo.name, "Api"))
+##设置回调
+$!callback.setFileName($tool.append($tableName, ".java"))
+$!callback.setSavePath($tool.append($tableInfo.savePath, "/api"))
+##拿到主键
+#if(!$tableInfo.pkColumn.isEmpty())
+    #set($pk = $tableInfo.pkColumn.get(0))
+#end
+
+#if($tableInfo.savePackageName)package $!{tableInfo.savePackageName}.#{end}Api;
+
+
+import com.zhipin.service.common.Result;
+import com.zhipin.wisdomstone.page.PageData;
+import $!{tableInfo.savePackageName}.model.$!{tableInfo.name}BO;
+
+
+/**
+ * $!{tableInfo.comment}($!{tableInfo.name}) Api
+ *
+ * @author $!author
+ * @since $!time.currTime()
+ */
+public interface $!{tableName}Api {
+
+    /**
+     * 分页查询
+     *
+     * @param $!{tool.firstLowerCase($tableInfo.name)} 筛选条件
+     * @param limitOffset      分页对象
+     * @return 查询结果
+     */
+    Result<PageData<$!{tableInfo.name}BO>>> queryPage($!{tableInfo.name}BO $!{tool.firstLowerCase($tableInfo.name)}BO, int page, int pageSize);
+
+    /**
+     * 通过主键查询单条数据
+     *
+     * @param id 主键
+     * @return 单条数据
+     */
+    Result<$!{tableInfo.name}BO> queryById(long id);
+
+    /**
+     * 新增数据
+     *
+     * @param $!{tool.firstLowerCase($tableInfo.name)}BO 实体
+     * @return 新增结果
+     */
+    Result<$!{tableInfo.name}BO> save(long opUserId, $!{tableInfo.name}BO $!{tool.firstLowerCase($tableInfo.name)}BO);
+
+    /**
+     * 修改数据
+     *
+     * @param $!{tool.firstLowerCase($tableInfo.name)} 实体
+     * @return 修改结果
+     */
+    Result<$!{tableInfo.name}BO> update($!{tableInfo.name}BO $!{tool.firstLowerCase($tableInfo.name)}BO);
+
+    /**
+     * 通过主键删除数据
+     *
+     * @param id 主键
+     * @return 删除结果
+     */
+    Result<Boolean> deleteById(long id);
+
+
+}

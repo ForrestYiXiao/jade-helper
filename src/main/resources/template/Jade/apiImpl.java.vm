@@ -1,0 +1,170 @@
+##定义初始变量
+#set($tableName = $tool.append($tableInfo.name, "ApiImpl"))
+##设置回调
+$!callback.setFileName($tool.append($tableName, ".java"))
+$!callback.setSavePath($tool.append($tableInfo.savePath, "/impl"))
+##拿到主键
+#if(!$tableInfo.pkColumn.isEmpty())
+    #set($pk = $tableInfo.pkColumn.get(0))
+#end
+
+#if($tableInfo.savePackageName)package $!{tableInfo.savePackageName}.#{end}impl;
+
+
+import com.zhipin.service.common.Result;
+import com.zhipin.wisdomstone.page.PageData;
+import $!{tableInfo.savePackageName}.model.$!{tableInfo.name}BO;
+import $!{tableInfo.savePackageName}.service.$!{tableInfo.name}Service;
+
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.collections4.CollectionUtils;
+import javax.annotation.Resource;
+
+/**
+ * $!{tableInfo.comment}($!{tableInfo.name}) Api实现类
+ *
+ * @author $!author
+ * @since $!time.currTime()
+ */
+@Slf4j
+@Service("$!tool.firstLowerCase($tableInfo.name)Api")
+public class $!{tableName}ApiImpl implements $!{tableInfo.name}Api{
+
+    /**
+     * 服务对象
+     */
+    @Resource
+    private $!{tableInfo.name}Service $!tool.firstLowerCase($tableInfo.name)Service;
+
+    @Autowired
+    private Mapper mapper;
+
+    @Override
+    public Result<PageData<$!{tableInfo.name}BO>>> queryPage($!{tableInfo.name}BO $!{tool.firstLowerCase($tableInfo.name)}BO, int page, int pageSize) {
+        Result<PageData<$!{tableInfo.name}BO>> result = this.$!{tool.firstLowerCase($tableInfo.name)}Api.queryPage(limitOffset.getPage(), limitOffset.getPageSize());
+
+        PageData<$!{tableInfo.name}BO> $!tool.firstLowerCase($tableInfo.name)BOPageData = new PageData<>();
+        int countRecord = $!tool.firstLowerCase($tableInfo.name)Service.countRecord(kfUserId);
+        if (countRecord == 0) {
+            return Result.success($!tool.firstLowerCase($tableInfo.name)BOPageData);
+        }
+        List<$!{tableInfo.name}DO> $!tool.firstLowerCase($tableInfo.name)DOS = $!tool.firstLowerCase($tableInfo.name)Service.getRecordPage(kfUserId, page, pageSize);
+        if (CollectionUtils.isEmpty($!tool.firstLowerCase($tableInfo.name)DOS)) {
+            return Result.success($!tool.firstLowerCase($tableInfo.name)BOPageData);
+        }
+
+        $!tool.firstLowerCase($tableInfo.name)BOPageData.setTotalCount(countRecord);
+
+        List<$!{tableInfo.name}BO> $!tool.firstLowerCase($tableInfo.name)BOList = transferRecordBOList($!tool.firstLowerCase($tableInfo.name)DOS);
+        $!tool.firstLowerCase($tableInfo.name)BOPageData.setData($!tool.firstLowerCase($tableInfo.name)BOList);
+
+        return Result.success($!tool.firstLowerCase($tableInfo.name)BOPageData);
+    }
+
+    @Override
+    public Result<$!{tableInfo.name}BO> queryById(long id) {
+        $!{tableInfo.name}DO $!tool.firstLowerCase($tableInfo.name)DO = $!tool.firstLowerCase($tableInfo.name)Service.getRecordById(id);
+        if (Objects.isNull($!tool.firstLowerCase($tableInfo.name)DO)) {
+            return Result.success(null);
+        }
+        $!{tableInfo.name}BO $!tool.firstLowerCase($tableInfo.name)BO = mapper.map($!tool.firstLowerCase($tableInfo.name)DO, $!{tableInfo.name}BO.class);
+        return Result.success($!tool.firstLowerCase($tableInfo.name)BO);
+    }
+
+    @Override
+    public Result<$!{tableInfo.name}BO> save(long opUserId, $!{tableInfo.name}BO $!{tool.firstLowerCase($tableInfo.name)}BO) {
+        if (Objects.isNull($!tool.firstLowerCase($tableInfo.name)BO)) {
+            return Result.failed(ResultCode.INVALID_PARAM);
+        }
+        $!{tableInfo.name}DO $!tool.firstLowerCase($tableInfo.name)DO = mapper.map($!{tool.firstLowerCase($tableInfo.name)}BO, $!{tableInfo.name}DO.class);
+        $!tool.firstLowerCase($tableInfo.name)Service.saveRecord($!tool.firstLowerCase($tableInfo.name)DO);
+        return Result.success();
+    }
+
+    @Override
+    public Result<$!{tableInfo.name}BO> update($!{tableInfo.name}BO $!{tool.firstLowerCase($tableInfo.name)}BO) {
+        if (Objects.isNull($!tool.firstLowerCase($tableInfo.name)BO)) {
+            return Result.failed(ResultCode.INVALID_PARAM);
+        }
+        $!{tableInfo.name}DO $!tool.firstLowerCase($tableInfo.name)DO = mapper.map($!{tool.firstLowerCase($tableInfo.name)}BO, $!{tableInfo.name}DO.class);
+        $!tool.firstLowerCase($tableInfo.name)Service.updateRecord($!tool.firstLowerCase($tableInfo.name)DO);
+        return Result.success();
+    }
+
+    @Override
+    public Result<$!{tableInfo.name}BO> delete(long id) {
+        $!tool.firstLowerCase($tableInfo.name)Service.deleteRecord(id);
+        return Result.success();
+    }
+
+    @NotNull
+    private List<$!{tableInfo.name}BO> transferRecordBOList(List<$!{tableInfo.name}DO> $!tool.firstLowerCase($tableInfo.name)DOS) {
+
+        List<Long> userIds = $!tool.firstLowerCase($tableInfo.name)DOS.stream().map($!{tableInfo.name}DO::getUpdateUserId).collect(Collectors.toList());
+        Map<Long, UserDO> userDOMap = organizationService.multiGetUserByIds(userIds);
+
+        List<$!{tableInfo.name}BO> $!tool.firstLowerCase($tableInfo.name)BOList = Lists.newArrayList();
+        $!tool.firstLowerCase($tableInfo.name)DOS.forEach($!tool.firstLowerCase($tableInfo.name)DO -> {
+            $!{tableInfo.name}BO $!tool.firstLowerCase($tableInfo.name)BO = mapper.map($!tool.firstLowerCase($tableInfo.name)DO, $!{tableInfo.name}BO.class);
+            UserDO userDO = WisdomstoneMapUtils.get(userDOMap, $!tool.firstLowerCase($tableInfo.name)DO.getUpdateUserId());
+            if (Objects.nonNull(userDO)) {
+                $!tool.firstLowerCase($tableInfo.name)BO.setUpdateUserName(userDO.getName());
+            }
+            $!tool.firstLowerCase($tableInfo.name)BO.setEncryptId(IdSecurityUtils.encryptId($!tool.firstLowerCase($tableInfo.name)DO.getId()));
+            $!tool.firstLowerCase($tableInfo.name)BO.setEncryptDirId(IdSecurityUtils.encryptId($!tool.firstLowerCase($tableInfo.name)DO.getDirId()));
+            $!tool.firstLowerCase($tableInfo.name)BO.setUpdateTime(TimeUtils.getDateStr($!tool.firstLowerCase($tableInfo.name)DO.getUpdateTime()));
+            $!tool.firstLowerCase($tableInfo.name)BO.setAddTime(TimeUtils.getDateStr($!tool.firstLowerCase($tableInfo.name)DO.getAddTime()));
+            $!tool.firstLowerCase($tableInfo.name)BOList.add($!tool.firstLowerCase($tableInfo.name)BO);
+        });
+        return $!tool.firstLowerCase($tableInfo.name)BOList;
+    }
+
+    /**
+     * 通过主键查询单条数据
+     *
+     * @param id 主键
+     * @return 单条数据
+     */
+    @GetMapping("/getDetail")
+    public ApiResult<?> queryById(@RequestParam(value = "id") long recordId) {
+        Result<$!{tableInfo.name}BO> result = this.$!{tool.firstLowerCase($tableInfo.name)}Api.queryById(recordId);
+        return ApiResultUtils.parseResult(result);
+    }
+
+    /**
+     * 新增数据
+     *
+     * @param $!{tool.firstLowerCase($tableInfo.name)} 实体
+     * @return 新增结果
+     */
+    @PostMapping("/save")
+    public ApiResult<$!{tableInfo.name}> add($!{tableInfo.name}BO $!{tool.firstLowerCase($tableInfo.name)}BO) {
+        Result<Boolean> result = this.$!{tool.firstLowerCase($tableInfo.name)}Api.save(kfLoginUser.getKfUserId(), $!{tool.firstLowerCase($tableInfo.name)}BO);
+        return ApiResultUtils.parseResult(result);
+    }
+
+    /**
+     * 编辑数据
+     *
+     * @param $!{tool.firstLowerCase($tableInfo.name)} 实体
+     * @return 编辑结果
+     */
+    @PostMapping("/update")
+    public ApiResult<$!{tableInfo.name}> edit($!{tableInfo.name}BO $!{tool.firstLowerCase($tableInfo.name)}BO) {
+        Result<Boolean> result = this.$!{tool.firstLowerCase($tableInfo.name)}Api.update(kfLoginUser.getKfUserId(), $!{tool.firstLowerCase($tableInfo.name)}BO);
+        return ApiResultUtils.parseResult(result);
+    }
+
+    /**
+     * 删除数据
+     *
+     * @param id 主键
+     * @return 删除是否成功
+     */
+    @GetMapping("/delete")
+    public ApiResult<?> deleteById(long recordId) {
+        Result<Boolean> result = this.$!{tool.firstLowerCase($tableInfo.name)}Api.deleteById(kfLoginUser.getKfUserId(), recordId);
+        return ApiResultUtils.parseResult(result);
+    }
+
+}

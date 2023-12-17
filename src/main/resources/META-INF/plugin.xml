@@ -1,0 +1,77 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+    <!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+    <id>com.zhipin.jadehelper.jade-helper</id>
+
+    <!-- Public plugin name should be written in Title Case.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+    <name>Jade-helper</name>
+
+    <!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+    <vendor email="zhangyixiao@kanzhun.com" url="https://www.zhipin.com/">BZL</vendor>
+
+    <!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+         Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+         Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+    <description>
+        JadeHelper！
+        帮助快速生成代码！！
+        只需要输入SQL就可以自动转换成代码！
+        可以自定义模板，任何格式代码都可以生成！
+        ❤❤感谢支持❤❤
+    </description>
+
+    <depends>com.intellij.modules.platform</depends>
+    <!--通过类生成代码，需要依赖Java插件-->
+    <depends>com.intellij.modules.java</depends>
+    <!--必须依赖Database Tool插件-->
+    <depends>com.intellij.database</depends>
+    <depends optional="true" config-file="easycode-java.xml">com.intellij.modules.java</depends>
+
+    <!-- 定义工具菜单 -->
+    <extensions defaultExtensionNs="com.intellij">
+
+        <!--实例化配置信息服务-->
+        <applicationService
+                serviceImplementation="com.zhipin.jadehelper.service.impl.SettingsStorageServiceImpl"/>
+        <!--项目服务-->
+        <projectService serviceImplementation="com.zhipin.jadehelper.service.impl.TableInfoSettingsServiceImpl"/>
+        <projectService serviceInterface="com.zhipin.jadehelper.service.CodeGenerateService"
+                        serviceImplementation="com.zhipin.jadehelper.service.impl.CodeGenerateServiceImpl"/>
+        <!--系统设置面板-->
+        <applicationConfigurable dynamic="true" instance="com.zhipin.jadehelper.ui.MainSettingForm"/>
+        <!--        <codeInsight.inlayProvider language="JAVA" implementationClass="com.zhipin.jadehelper.service.test.DaoMethodParameterHintsProvider"/>-->
+        <!--        <codeInsight.inlayProvider language="JAVA" implementationClass="com.zhipin.jadehelper.service.test.ParameterInlayHintsProvider"/>-->
+        <!--        <codeInsight.inlayProvider language="JAVA" implementationClass="com.zhipin.jadehelper.service.test.ParameterPositionHintProvider"/>-->
+        <!--        <codeInsight.parameterNameHints language="JAVA" implementationClass="com.zhipin.jadehelper.service.test.DaoInlayParameterHintsProvider"/>-->
+        <!--    方法提示    -->
+        <annotator language="JAVA" implementationClass="com.zhipin.jadehelper.service.test.MethodAnnotator"/>
+        <!--        <completion.contributor language="JAVA" implementationClass="com.zhipin.jadehelper.service.test.CustomCompletionContributor"/>-->
+        <!--        <intentionAction>-->
+        <!--            <className>com.zhipin.jadehelper.service.test.MethodParameterIntention</className>-->
+        <!--            <category>Code Editing</category>-->
+        <!--        </intentionAction>-->
+
+
+    </extensions>
+    <actions>
+        <group id="com.zhipin.jadehelper.action" class="com.zhipin.jadehelper.action.MainActionGroup"
+               text="JadeHelper"
+               popup="true">
+            <!--生成代码菜单-->
+            <add-to-group group-id="DatabaseViewPopupMenu" anchor="first"/>
+        </group>
+        <action id="MainAction" class="com.zhipin.jadehelper.action.BCodeAction" text="测试Aciton"
+                description="Test Action">
+            <keyboard-shortcut keymap="$default" first-keystroke="alt G"/>
+            <add-to-group group-id="GenerateGroup" anchor="last"/>
+        </action>
+        <action id="GenerateCode" class="com.zhipin.jadehelper.action.JadeHelperMainAction" text="生成代码">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+        <!--        <action id="JzCode.GenerateCode" class="action.com.zhipin.jadehelper.JzCodeAction" text="生成代码"-->
+        <!--                description="生成代码">-->
+        <!--            <add-to-group group-id="ToolsMenu" anchor="first"/>-->
+        <!--        </action>-->
+    </actions>
+</idea-plugin>
