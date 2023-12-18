@@ -48,6 +48,10 @@ tasks {
     withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile> {
         kotlinOptions.jvmTarget = "11"
     }
+    withType<Jar> {
+        // 包含所有依赖项
+        from(configurations.runtimeClasspath.files.map { if (it.isDirectory) it else zipTree(it) })
+    }
 
     patchPluginXml {
         sinceBuild.set("213")
