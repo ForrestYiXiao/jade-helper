@@ -23,7 +23,7 @@ public class MethodAnnotator implements Annotator {
                 holder.newAnnotation(HighlightSeverity.INFORMATION, typeDescription)
                         .range(parameter)
                         .create();
-                holder.newAnnotation(HighlightSeverity.INFORMATION, "Jade" + ": " + (i + 1))
+                holder.newAnnotation(HighlightSeverity.INFORMATION, "下标位置" + ": " + (i + 1))
                         .range(parameter)
                         .create();
 //                Annotation annotation = holder.createInfoAnnotation(parameter, typeDescription);
@@ -41,23 +41,27 @@ public class MethodAnnotator implements Annotator {
         switch (type.getCanonicalText()) {
             case "int":
             case "float":
+            case "long":
             case "double":
                 typeDescription = " if( " + message + " >= 0){ do } ";
                 break;
             case "java.lang.Integer":
+            case "java.lang.Long":
             case "java.lang.Float":
             case "java.lang.Double":
                 typeDescription = " if( " + message + " != null and " + message + " >= 0){ do } ";
                 break;
-            case "java.util.Date":
-                typeDescription = " if( " + message + " != null ){ do } ";
+            case "java.util.List":
+                typeDescription = " if( " + message + " != null and " + message + " size() > 0 ){ do } ";
                 break;
             case "java.lang.String":
                 typeDescription = " if( " + message + " != null and " + message + " != '' ){ do } ";
                 break;
             // 添加其他case语句以处理其他类型
+            case "java.util.Date":
             default:
-                typeDescription = " Unknown type: " + type.getCanonicalText();
+                typeDescription = " if( " + message + " != null ){ do } ";
+//                typeDescription = " Unknown type: " + type.getCanonicalText();
                 break;
         }
 //        typeDescription = "Jade " + message + typeDescription;
