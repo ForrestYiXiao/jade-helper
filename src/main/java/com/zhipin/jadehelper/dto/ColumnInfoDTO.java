@@ -23,6 +23,7 @@ public class ColumnInfoDTO {
 
     public ColumnInfoDTO(PsiField field) {
         this.name = field.getName();
+        this.columnName = NameUtils.getInstance().hump2Underline(field.getName());
         this.comment = DocCommentUtils.getComment(field.getDocComment());
         this.type = field.getType().getCanonicalText();
         this.custom = false;
@@ -31,6 +32,7 @@ public class ColumnInfoDTO {
 
     public ColumnInfoDTO(DasColumn column) {
         this.name = NameUtils.getInstance().getJavaName(column.getName());
+        this.columnName = column.getName();
         this.comment = column.getComment();
         this.type = getJavaType(column.getDataType().toString());
         this.custom = false;
@@ -39,6 +41,7 @@ public class ColumnInfoDTO {
 
     public ColumnInfoDTO(ColumnDefinition column) {
         this.name = NameUtils.getInstance().getJavaName(column.getColumnName());
+        this.columnName = column.getColumnName();
         this.comment = SqlUtils.extractComment(column);
         this.type = getJavaType(column.getColDataType().getDataType());
         this.custom = false;
@@ -65,6 +68,11 @@ public class ColumnInfoDTO {
      * 名称
      */
     private String name;
+
+    /**
+     * 名称
+     */
+    private String columnName;
     /**
      * 注释
      */

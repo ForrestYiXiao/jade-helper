@@ -26,13 +26,13 @@ public class SettingsStorageDTO {
      * @return 储存对象
      */
     public static SettingsStorageDTO defaultVal() {
-        try {
-            // 从配置文件中加载配置
-            String json = UrlUtil.loadText(SettingsStorageDTO.class.getResource("/defaultConfig.json"));
-            return JSON.parse(json, SettingsStorageDTO.class);
-        } catch (Exception e) {
-            ExceptionUtil.rethrow(e);
-        }
+//        try {
+//            // 从配置文件中加载配置
+//            String json = UrlUtil.loadText(SettingsStorageDTO.class.getResource("/defaultConfig.json"));
+//            return JSON.parse(json, SettingsStorageDTO.class);
+//        } catch (Exception e) {
+//            ExceptionUtil.rethrow(e);
+//        }
         // 配置文件加载失败，直接创建配置
         SettingsStorageDTO storage = new SettingsStorageDTO();
         storage.author = GlobalDict.AUTHOR;

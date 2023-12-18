@@ -29,25 +29,26 @@ import java.util.List;
  * @since $!time.currTime()
  */
 @DAO(catalog = DataSourceDef.ZP_WISDOMSTONE)
+public interface $!{tableName} {
 
-    String TABLE_NAME = " $!tableInfo.obj.name ";
+    String TABLE_NAME = " $!tableInfo.name ";
 
-    String INSERT_COLUMNS = " #allSqlColumn() ";
+    String INSERT_COLUMNS = " #foreach($column in $tableInfo.fullColumn)#if($column.name != 'add_user_id' && $column.name != 'update_user_id' && $column.name != 'add_time' && $column.name != 'update_time' && $column.name != 'deleted' && $column.name != 'id'):1.$column.name#if($velocityHasNext),#end#end#end ";
 
     String ALL_COLUMNS = " id, " + INSERT_COLUMNS + ", deleted, add_time ,update_time ";
 
     @ReturnGeneratedKeys
-    @SQL("insert into " + TABLE_NAME + " ( " + INSERT_COLUMNS + " ) values ( #foreach($column in $tableInfo.fullColumn)#if($column.name != 'addUserId' && $column.name != 'updateUserId' && $column.name != 'addTime' && $column.name != 'updateTime' && $column.name != 'deleted' && $column.name != 'id') :1.$column.name#if($velocityHasNext),#end#end#end )")
+    @SQL("insert into " + TABLE_NAME + " ( " + INSERT_COLUMNS + " ) values ( #foreach($column in $tableInfo.fullColumn)#if($column.columnName != 'addUserId' && $column.columnName != 'updateUserId' && $column.columnName != 'addTime' && $column.columnName != 'updateTime' && $column.columnName != 'deleted' && $column.columnName != 'id') :1.$column.columnName#if($velocityHasNext),#end#end#end )")
     Long save($!{tableInfo.name}DO $!tool.firstLowerCase($tableInfo.name)DO);
 
     @ReturnGeneratedKeys
-    @SQL("insert into " + TABLE_NAME + " ( " + INSERT_COLUMNS + " ) values ( #foreach($column in $tableInfo.fullColumn)#if($column.name != 'addUserId' && $column.name != 'updateUserId' && $column.name != 'addTime' && $column.name != 'updateTime' && $column.name != 'deleted' && $column.name != 'id'):1.$column.name#if($velocityHasNext),#end#end#end )")
+    @SQL("insert into " + TABLE_NAME + " ( " + INSERT_COLUMNS + " ) values ( #foreach($column in $tableInfo.fullColumn)#if($column.columnName != 'addUserId' && $column.columnName != 'updateUserId' && $column.columnName != 'addTime' && $column.columnName != 'updateTime' && $column.columnName != 'deleted' && $column.columnName != 'id'):1.$column.columnName#if($velocityHasNext),#end#end#end )")
     Long[] batchSave(List<$!{tableInfo.name}DO> $!tool.firstLowerCase($tableInfo.name)DOList);
 
     /**
      * 修改记录
      */
-    @SQL("update " + TABLE_NAME + " set #foreach($column in $tableInfo.fullColumn)#if($column.name != 'addUserId' && $column.name != 'addTime' && $column.name != 'updateTime' && $column.name != 'deleted' && $column.name != 'id')$!column.obj.name = :1.$!column.name#if($velocityHasNext), #end#end#end where id = :1.id")
+    @SQL("update " + TABLE_NAME + " set #foreach($column in $tableInfo.fullColumn)#if($column.columnName != 'addUserId' && $column.columnName != 'addTime' && $column.columnName != 'updateTime' && $column.columnName != 'deleted' && $column.columnName != 'id')$!column.obj.name = :1.$!column.columnName#if($velocityHasNext), #end#end#end where id = :1.id")
     int updateRecord($!{tableInfo.name}DO $!tool.firstLowerCase($tableInfo.name)DO);
 
     @SQL("update " + TABLE_NAME + " set deleted = 1, update_user_id = :2 where id = :1")
