@@ -17,10 +17,6 @@ import java.util.Map;
 
 /**
  * 设置储存传输对象
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @date 2021/08/07 11:35
  */
 @Data
 public class SettingsStorageDTO {

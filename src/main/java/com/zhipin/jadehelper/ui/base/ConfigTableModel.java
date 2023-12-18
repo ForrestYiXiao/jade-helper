@@ -12,11 +12,6 @@ import javax.swing.table.DefaultTableModel;
 import java.util.*;
 import java.util.stream.Collectors;
 
-/**
- * @author Zhang Yixiao
- * @version 1.0.0
- * @date 2021/08/14 13:41
- */
 public class ConfigTableModel extends DefaultTableModel implements EditableModel {
 
     private TableInfo tableInfo;

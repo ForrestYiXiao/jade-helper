@@ -4,10 +4,6 @@ import lombok.Data;
 
 /**
  * 调试方法实体类
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @since 2018/09/03 11:10
  */
 @Data
 public class DebugMethod {

@@ -20,10 +20,6 @@ import java.util.TreeMap;
 
 /**
  * 表格信息设置传输对象
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @date 2021/08/14 17:40
  */
 @Data
 public class TableInfoSettingsDTO implements Serializable {

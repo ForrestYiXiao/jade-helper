@@ -23,10 +23,8 @@ import java.util.stream.Collectors;
 
 /**
  * 从Java类生成代码菜单
- *
- * @author Mario Luo
  */
-public class EasyCodeEntityAction extends AnAction {
+public class JadeHelperEntityAction extends AnAction {
 
     private final CacheDataUtils cacheDataUtils = CacheDataUtils.getInstance();
 

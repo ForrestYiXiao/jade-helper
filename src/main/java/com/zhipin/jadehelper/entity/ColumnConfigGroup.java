@@ -6,10 +6,6 @@ import java.util.List;
 
 /**
  * 列配置分组
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @since 2018/07/18 09:33
  */
 @Data
 public class ColumnConfigGroup implements AbstractGroup<ColumnConfigGroup, ColumnConfig> {

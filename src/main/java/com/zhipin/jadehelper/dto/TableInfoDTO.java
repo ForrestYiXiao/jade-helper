@@ -20,10 +20,6 @@ import java.util.stream.Collectors;
 
 /**
  * 表格信息传输对象
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @date 2021/08/14 17:28
  */
 @Data
 @NoArgsConstructor

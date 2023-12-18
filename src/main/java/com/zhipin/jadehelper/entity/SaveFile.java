@@ -25,10 +25,6 @@ import java.io.File;
  * 需要保存的文件
  * <p>
  * 如果文件保存在项目路径下，则使用idea提供的psi对象操作。如果文件保存在非项目路径下，则使用java原始IO流操作。
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @since 2020/04/20 22:54
  */
 @Data
 public class SaveFile {

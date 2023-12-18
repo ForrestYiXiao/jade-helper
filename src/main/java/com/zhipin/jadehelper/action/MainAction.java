@@ -31,10 +31,6 @@ import java.util.regex.PatternSyntaxException;
 
 /**
  * 代码生成菜单
- *
- * @author makejava
- * @version 1.0.0
- * @since 2018/07/17 13:10
  */
 public class MainAction extends AnAction {
     /**

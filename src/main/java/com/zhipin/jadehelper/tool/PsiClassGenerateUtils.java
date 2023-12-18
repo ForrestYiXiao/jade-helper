@@ -7,8 +7,6 @@ import com.intellij.psi.PsiModifierList;
 
 /**
  * 从实体类生成代码业务工具类
- *
- * @author Mario Luo
  */
 public final class PsiClassGenerateUtils {
 

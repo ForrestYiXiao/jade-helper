@@ -5,10 +5,6 @@ import lombok.Data;
 
 /**
  * 生成选项
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @date 2021/08/17 09:08
  */
 @Data
 @Builder

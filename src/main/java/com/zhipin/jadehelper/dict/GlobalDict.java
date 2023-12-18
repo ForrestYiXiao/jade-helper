@@ -2,10 +2,6 @@ package com.zhipin.jadehelper.dict;
 
 /**
  * 全局字典
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @date 2021/08/07 11:41
  */
 public interface GlobalDict {
     /**

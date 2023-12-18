@@ -16,10 +16,6 @@ import java.util.regex.Pattern;
 
 /**
  * 列信息传输对象
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @date 2021/08/14 17:29
  */
 @Data
 @NoArgsConstructor

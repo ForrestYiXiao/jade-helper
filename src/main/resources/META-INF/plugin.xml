@@ -20,7 +20,7 @@
     <depends>com.intellij.modules.java</depends>
     <!--必须依赖Database Tool插件-->
     <depends>com.intellij.database</depends>
-    <depends optional="true" config-file="easycode-java.xml">com.intellij.modules.java</depends>
+    <depends optional="true" config-file="jadehelper-java.xml">com.intellij.modules.java</depends>
 
     <!-- 定义工具菜单 -->
     <extensions defaultExtensionNs="com.intellij">

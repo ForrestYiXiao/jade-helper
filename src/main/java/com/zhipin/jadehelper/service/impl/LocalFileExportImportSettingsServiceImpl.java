@@ -44,7 +44,7 @@ public class LocalFileExportImportSettingsServiceImpl implements ExportImportSet
     public void exportConfig(SettingsStorageDTO settingsStorage) {
         // 1.选择储存位置
         FileSaverDialog saveFileDialog = FileChooserFactory.getInstance().createSaveFileDialog(new FileSaverDescriptor("Save Config As Json", "Save to"), ProjectUtils.getCurrProject());
-        VirtualFileWrapper saveFile = saveFileDialog.save((VirtualFile) null, "EasyCodeConfig.json");
+        VirtualFileWrapper saveFile = saveFileDialog.save((VirtualFile) null, "JadeHelperConfig.json");
         if (saveFile == null) {
             return;
         }
@@ -63,8 +63,8 @@ public class LocalFileExportImportSettingsServiceImpl implements ExportImportSet
                 // 发起通知
                 Notification notification = new Notification(
                         Notifications.SYSTEM_MESSAGES_GROUP_ID,
-                        "Easy code notify",
-                        "Easy code config file export to",
+                        "Jade Helper notify",
+                        "Jade Helper config file export to",
                         NotificationType.INFORMATION);
                 notification.addAction(new AnAction(file.getName()) {
                     @Override

@@ -9,10 +9,6 @@ import java.util.List;
 
 /**
  * 抽象分组类
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @since 2018/07/17 13:10
  */
 public interface AbstractGroup<T, E extends AbstractItem<E>> {
     /**

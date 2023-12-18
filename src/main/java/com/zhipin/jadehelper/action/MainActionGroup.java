@@ -16,10 +16,6 @@ import java.util.List;
 
 /**
  * 操作按钮分组
- *
- * @author makejava
- * @version 1.0.0
- * @since 2018/07/17 13:10
  */
 public class MainActionGroup extends ActionGroup {
     /**
@@ -97,8 +93,8 @@ public class MainActionGroup extends ActionGroup {
      * @return 子菜单数组
      */
     private AnAction[] getMenuList() {
-        String mainActionId = "com.sjhy.easy.code.action.generate";
-        String configActionId = "com.sjhy.easy.code.action.config";
+        String mainActionId = "com.zhipin.jadehelper.action.generate";
+        String configActionId = "com.zhipin.jadehelper.action.config";
         ActionManager actionManager = ActionManager.getInstance();
         // 代码生成菜单
         AnAction mainAction = actionManager.getAction(mainActionId);
