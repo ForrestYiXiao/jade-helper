@@ -9,7 +9,6 @@ import org.jetbrains.annotations.NotNull;
 
 /**
  * @author Zhang Yixiao
- * @date 2023/10/27 14:24
  */
 public class CustomCompletionContributor extends CompletionContributor {
     public CustomCompletionContributor() {

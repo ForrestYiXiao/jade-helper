@@ -26,7 +26,6 @@ import java.util.stream.Stream;
 /**
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/07 15:33
  */
 public class TypeMapperSettingForm implements BaseSettings {
     private final JPanel mainPanel;

@@ -16,7 +16,6 @@ import net.sf.jsqlparser.JSQLParserException;
 
 /**
  * @author Zhang Yixiao
- * @date 2023/10/29 17:17
  */
 public class SqlUtils {
     Logger log = Logger.getLogger("SqlUtils");

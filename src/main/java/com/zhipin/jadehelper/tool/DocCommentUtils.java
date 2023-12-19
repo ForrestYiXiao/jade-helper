@@ -12,7 +12,6 @@ import java.util.Arrays;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/16 17:37
  */
 public class DocCommentUtils {
 

@@ -15,7 +15,6 @@ import java.util.List;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2021/08/12 11:12
  */
 public class ListRadioComponent extends JPanel {
     /**

@@ -24,7 +24,6 @@ import java.util.function.Consumer;
 /**
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/10 16:14
  */
 public class TemplateSettingForm implements Configurable, BaseSettings {
     /**

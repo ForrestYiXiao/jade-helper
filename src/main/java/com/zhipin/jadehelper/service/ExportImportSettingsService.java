@@ -8,7 +8,6 @@ import com.zhipin.jadehelper.dto.SettingsStorageDTO;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/11 17:24
  */
 public interface ExportImportSettingsService {
 

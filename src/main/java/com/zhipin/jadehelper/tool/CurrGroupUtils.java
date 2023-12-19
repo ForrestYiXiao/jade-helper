@@ -12,7 +12,6 @@ import com.zhipin.jadehelper.service.SettingsStorageService;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2018/09/01 16:51
  */
 public final class CurrGroupUtils {
     /**

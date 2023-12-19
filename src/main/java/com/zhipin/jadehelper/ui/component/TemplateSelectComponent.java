@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/16 16:18
  */
 public class TemplateSelectComponent {
     @Getter

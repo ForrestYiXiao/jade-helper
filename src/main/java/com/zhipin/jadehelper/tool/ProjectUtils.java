@@ -16,7 +16,6 @@ import java.awt.*;
  *
  * @author tangcent
  * @version 1.0.0
- * @since 2020/02/14 18:35
  */
 public class ProjectUtils {
 

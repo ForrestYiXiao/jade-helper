@@ -22,10 +22,6 @@ import java.util.regex.Pattern;
 
 /**
  * 网络导出导入设置服务实现
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @date 2021/08/12 14:37
  */
 public class NetworkExportImportSettingsServiceImpl implements ExportImportSettingsService {
 

@@ -26,7 +26,6 @@ import java.util.function.Consumer;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/10 14:13
  */
 public class GroupNameComponent<E extends AbstractItem<E>, T extends AbstractGroup<T, E>> {
 

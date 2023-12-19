@@ -12,7 +12,6 @@ import javax.swing.*;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2021/02/01 15:36
  */
 public class MessageDialogUtils {
 

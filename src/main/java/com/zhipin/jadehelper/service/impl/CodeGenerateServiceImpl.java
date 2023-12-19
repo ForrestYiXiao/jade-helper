@@ -30,7 +30,6 @@ import java.util.stream.Collectors;
 /**
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2018/09/02 12:50
  */
 public class CodeGenerateServiceImpl implements CodeGenerateService {
     /**

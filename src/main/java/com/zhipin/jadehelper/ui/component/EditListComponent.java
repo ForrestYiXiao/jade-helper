@@ -27,7 +27,6 @@ import java.util.stream.Collectors;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/10 16:57
  */
 public class EditListComponent<E extends AbstractEditorItem<E>> {
     @Getter

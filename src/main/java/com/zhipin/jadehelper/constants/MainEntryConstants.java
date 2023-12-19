@@ -3,7 +3,6 @@ package com.zhipin.jadehelper.constants;
 /**
  * 入口常量
  * @author Zhang Yixiao
- * @date 2023/11/1 14:35
  */
 public interface MainEntryConstants {
 

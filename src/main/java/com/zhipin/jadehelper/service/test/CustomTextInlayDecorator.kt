@@ -10,7 +10,6 @@ import java.awt.Graphics2D
 
 /**
  * @author Zhang Yixiao
- * @date 2023/10/27 21:12
  */
 class CustomTextInlayDecorator(private val innerPresentation: TextInlayPresentation) : InlayPresentation by innerPresentation {
     override fun paint(g: Graphics2D, attributes: TextAttributes) {

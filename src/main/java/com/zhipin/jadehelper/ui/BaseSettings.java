@@ -8,7 +8,6 @@ import org.jetbrains.annotations.Nullable;
 /**
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2021/08/07 19:42
  */
 public interface BaseSettings extends Configurable {
     /**

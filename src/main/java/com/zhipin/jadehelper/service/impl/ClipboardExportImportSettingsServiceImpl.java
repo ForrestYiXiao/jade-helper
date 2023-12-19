@@ -15,7 +15,6 @@ import java.awt.datatransfer.DataFlavor;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/12 14:57
  */
 public class ClipboardExportImportSettingsServiceImpl implements ExportImportSettingsService {
     /**

@@ -8,10 +8,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.psi.PsiFile;
 
-/**
- * @author Zhang Yixiao
- * @date 2023/5/25 17:43
- */
 public class BCodeAction extends AnAction {
 
     @Override

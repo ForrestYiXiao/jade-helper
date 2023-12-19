@@ -8,7 +8,6 @@ import java.util.Map;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2018/07/25 10:24
  */
 public class CollectionUtil {
 

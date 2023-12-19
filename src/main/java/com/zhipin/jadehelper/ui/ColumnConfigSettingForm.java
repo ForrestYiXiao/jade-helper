@@ -27,7 +27,6 @@ import java.util.stream.Stream;
 /**
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/10 13:27
  */
 public class ColumnConfigSettingForm implements Configurable, BaseSettings {
     private final JPanel mainPanel;

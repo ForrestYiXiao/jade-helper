@@ -12,7 +12,6 @@ import java.awt.*;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/10 16:49
  */
 public class LeftRightComponent {
     /**

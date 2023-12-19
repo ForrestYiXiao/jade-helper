@@ -24,7 +24,6 @@ import java.util.function.Function;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/10 09:52
  */
 public class TableComponent<T extends AbstractItem<T>> extends DefaultTableModel implements EditableModel {
     /**

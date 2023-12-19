@@ -45,7 +45,6 @@ import java.util.*;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/12 15:54
  */
 public class RealtimeDebugComponent {
     @Getter

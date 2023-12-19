@@ -2,10 +2,6 @@ package com.zhipin.jadehelper.action;
 
 import javax.swing.*;
 
-/**
- * @author Zhang Yixiao
- * @date 2023/10/29 13:54
- */
 public class ActionTest {
 
     public ActionTest() {

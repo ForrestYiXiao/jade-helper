@@ -10,7 +10,6 @@ import java.awt.*;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/16 16:18
  */
 public class GenerateListComponent extends JPanel implements ListCellRenderer<RunAnythingChooseContextAction.ModuleItem> {
     private JLabel moduleLabel = new JLabel("");

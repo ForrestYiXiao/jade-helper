@@ -17,7 +17,6 @@ import java.util.*;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2018/08/14 18:11
  */
 @SuppressWarnings("unused")
 public class GlobalTool extends NameUtils {

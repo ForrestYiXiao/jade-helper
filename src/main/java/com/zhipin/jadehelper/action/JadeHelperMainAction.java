@@ -17,7 +17,6 @@ import javax.swing.*;
 
 /**
  * @author Zhang Yixiao
- * @date 2023/5/25 20:49
  */
 public class JadeHelperMainAction extends AnAction {
 

@@ -9,7 +9,6 @@ import java.util.List;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2018/07/18 09:33
  */
 @Data
 public class TemplateGroup implements AbstractGroup<TemplateGroup, Template> {

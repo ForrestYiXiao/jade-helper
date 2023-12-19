@@ -6,7 +6,6 @@ import java.util.List;
 
 /**
  * @author Zhang Yixiao
- * @date 2023/10/29 17:23
  */
 public class TableDetail {
     private String tableName;

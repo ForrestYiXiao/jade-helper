@@ -16,7 +16,6 @@ import java.lang.reflect.InvocationTargetException;
 /**
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2020/06/11 15:47
  */
 public class CompareFileUtils {
 

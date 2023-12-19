@@ -5,7 +5,6 @@ package com.zhipin.jadehelper.entity;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/11 13:45
  */
 public interface AbstractEditorItem<T extends AbstractItem> extends AbstractItem<T> {
     /**

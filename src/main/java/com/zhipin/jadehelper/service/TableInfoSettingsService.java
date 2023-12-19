@@ -17,7 +17,6 @@ import java.io.IOException;
 /**
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/14 15:16
  */
 public interface TableInfoSettingsService extends PersistentStateComponent<TableInfoSettingsDTO> {
     /**

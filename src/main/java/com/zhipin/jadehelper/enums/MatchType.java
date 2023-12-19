@@ -3,7 +3,6 @@ package com.zhipin.jadehelper.enums;
 /**
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/07 17:47
  */
 public enum MatchType {
     /**

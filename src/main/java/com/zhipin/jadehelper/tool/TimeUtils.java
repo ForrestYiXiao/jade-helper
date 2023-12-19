@@ -8,7 +8,6 @@ import java.util.Date;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2018/07/19 13:16
  */
 public class TimeUtils {
     private static volatile TimeUtils timeUtils;

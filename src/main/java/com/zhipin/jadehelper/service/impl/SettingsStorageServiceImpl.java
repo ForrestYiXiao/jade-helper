@@ -9,10 +9,6 @@ import org.jetbrains.annotations.Nullable;
 
 /**
  * 设置储存服务实现
- *
- * @author Zhang Yixiao
- * @version 1.0.0
- * @date 2021/08/07 11:32
  */
 @State(name = "JadeHelperSetting", storages = @Storage("jade-helper-setting.xml"))
 public class SettingsStorageServiceImpl implements SettingsStorageService {

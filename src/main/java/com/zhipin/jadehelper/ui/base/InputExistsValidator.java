@@ -10,7 +10,6 @@ import java.util.Collection;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @date 2021/08/10 17:16
  */
 public class InputExistsValidator implements InputValidator {
 

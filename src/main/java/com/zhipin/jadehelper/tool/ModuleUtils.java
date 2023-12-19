@@ -18,7 +18,6 @@ import java.util.List;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2018/09/01 17:15
  */
 public final class ModuleUtils {
     /**

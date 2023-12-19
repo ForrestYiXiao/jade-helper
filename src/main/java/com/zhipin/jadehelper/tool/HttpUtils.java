@@ -26,7 +26,6 @@ import java.io.IOException;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2018/09/03 14:59
  */
 public final class HttpUtils {
     /**

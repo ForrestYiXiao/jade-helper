@@ -8,7 +8,6 @@ import java.util.function.Function;
  *
  * @author Zhang Yixiao
  * @version 1.0.0
- * @since 2018/08/07 11:52
  */
 @SuppressWarnings("WeakerAccess")
 public class StringUtils {
