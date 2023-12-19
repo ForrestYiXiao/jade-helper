@@ -9,7 +9,14 @@ import com.intellij.psi.PsiParameter;
 import com.intellij.psi.PsiType;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class MethodAnnotator implements Annotator {
+
+
+    final static Pattern p = Pattern.compile("<[^>]+>");
+
     @Override
     public void annotate(@NotNull PsiElement element, @NotNull AnnotationHolder holder) {
         if (element instanceof PsiMethod && element.getContainingFile().getName().endsWith("DAO.java")) {
@@ -36,35 +43,40 @@ public class MethodAnnotator implements Annotator {
 
     @NotNull
     private static String getHelperDesc(int i, PsiType type) {
-        String typeDescription = "";
+        String typeDescription = "" ;
         String message = ":" + (i + 1);
-        switch (type.getCanonicalText()) {
+        switch (removeTag(type.getCanonicalText())) {
             case "int":
             case "float":
             case "long":
             case "double":
-                typeDescription = " if( " + message + " >= 0){ do } ";
+                typeDescription = " if( " + message + " >= 0){ do } " ;
                 break;
             case "java.lang.Integer":
             case "java.lang.Long":
             case "java.lang.Float":
             case "java.lang.Double":
-                typeDescription = " if( " + message + " != null and " + message + " >= 0){ do } ";
+                typeDescription = " if( " + message + " != null and " + message + " >= 0){ do } " ;
                 break;
             case "java.util.List":
-                typeDescription = " if( " + message + " != null and " + message + " size() > 0 ){ do } ";
+                typeDescription = " if( " + message + " != null and " + message + ".size() > 0 ){ do } " ;
                 break;
             case "java.lang.String":
-                typeDescription = " if( " + message + " != null and " + message + " != '' ){ do } ";
+                typeDescription = " if( " + message + " != null and " + message + " != '' ){ do } " ;
                 break;
             // 添加其他case语句以处理其他类型
             case "java.util.Date":
             default:
-                typeDescription = " if( " + message + " != null ){ do } ";
+                typeDescription = " if( " + message + " != null ){ do } " ;
 //                typeDescription = " Unknown type: " + type.getCanonicalText();
                 break;
         }
 //        typeDescription = "Jade " + message + typeDescription;
         return typeDescription;
+    }
+
+    public static String removeTag(String str) {
+        Matcher m = p.matcher(str);
+        return m.replaceAll("").trim();
     }
 }

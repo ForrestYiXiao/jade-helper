@@ -1,136 +1,111 @@
 {
-  "author": "ZhangYixiao",
-  "version": "1.0.0",
-  "userSecure": "",
-  "currTypeMapperGroupName": "Default",
-  "currTemplateGroupName": "jade",
-  "currColumnConfigGroupName": "Default",
-  "currGlobalConfigGroupName": "Default",
-  "typeMapper": {
-    "Default": {
-      "name": "Default",
-      "elementList": [
-        {
-          "matchType": "REGEX",
-          "columnType": "varchar(\\(\\d+\\))?",
-          "javaType": "java.lang.String"
-        },
-        {
-          "matchType": "REGEX",
-          "columnType": "char(\\(\\d+\\))?",
-          "javaType": "java.lang.String"
-        },
-        {
-          "matchType": "REGEX",
-          "columnType": "(tiny|medium|long)*text",
-          "javaType": "java.lang.String"
-        },
-        {
-          "matchType": "REGEX",
-          "columnType": "decimal(\\(\\d+,\\d+\\))?",
-          "javaType": "java.lang.Double"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "integer",
-          "javaType": "java.lang.Integer"
-        },
-        {
-          "matchType": "REGEX",
-          "columnType": "(tiny|small|medium)*int(\\(\\d+\\))?",
-          "javaType": "java.lang.Integer"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "int4",
-          "javaType": "java.lang.Integer"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "int8",
-          "javaType": "java.lang.Long"
-        },
-        {
-          "matchType": "REGEX",
-          "columnType": "bigint(\\(\\d+\\))?",
-          "javaType": "java.lang.Long"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "date",
-          "javaType": "java.util.Date"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "datetime",
-          "javaType": "java.util.Date"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "timestamp",
-          "javaType": "java.util.Date"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "time",
-          "javaType": "java.time.LocalTime"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "boolean",
-          "javaType": "java.lang.Boolean"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "bigint(20) unsigned",
-          "javaType": "java.lang.Long"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "int(11) unsigned",
-          "javaType": "java.lang.Integer"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "tinyint(3) unsigned",
-          "javaType": "java.lang.Integer"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "int(10) unsigned",
-          "javaType": "java.lang.Integer"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "smallint(4) unsigned",
-          "javaType": "java.lang.Integer"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "tinyint(4) unsigned",
-          "javaType": "java.lang.Integer"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "tinyint(2) unsigned",
-          "javaType": "java.lang.Integer"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "float(10,2)",
-          "javaType": "java.lang.Float"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "float",
-          "javaType": "java.lang.String"
-        },
-        {
-          "matchType": "ORDINARY",
-          "columnType": "json",
-          "javaType": "java.lang.String"
-        }
-      ]
+  "author" : "ZhangYixiao",
+  "version" : "1.0.0",
+  "userSecure" : "",
+  "currTypeMapperGroupName" : "Default",
+  "currTemplateGroupName" : "jade",
+  "currColumnConfigGroupName" : "Default",
+  "currGlobalConfigGroupName" : "Default",
+  "typeMapper" : {
+    "Default" : {
+      "name" : "Default",
+      "elementList" : [ {
+        "matchType" : "REGEX",
+        "columnType" : "varchar(\\(\\d+\\))?",
+        "javaType" : "java.lang.String"
+      }, {
+        "matchType" : "REGEX",
+        "columnType" : "char(\\(\\d+\\))?",
+        "javaType" : "java.lang.String"
+      }, {
+        "matchType" : "REGEX",
+        "columnType" : "(tiny|medium|long)*text",
+        "javaType" : "java.lang.String"
+      }, {
+        "matchType" : "REGEX",
+        "columnType" : "decimal(\\(\\d+,\\d+\\))?",
+        "javaType" : "java.lang.Double"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "integer",
+        "javaType" : "java.lang.Integer"
+      }, {
+        "matchType" : "REGEX",
+        "columnType" : "(tiny|small|medium)*int(\\(\\d+\\))?",
+        "javaType" : "java.lang.Integer"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "int4",
+        "javaType" : "java.lang.Integer"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "int8",
+        "javaType" : "java.lang.Long"
+      }, {
+        "matchType" : "REGEX",
+        "columnType" : "bigint(\\(\\d+\\))?",
+        "javaType" : "java.lang.Long"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "date",
+        "javaType" : "java.util.Date"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "datetime",
+        "javaType" : "java.util.Date"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "timestamp",
+        "javaType" : "java.util.Date"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "time",
+        "javaType" : "java.time.LocalTime"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "boolean",
+        "javaType" : "java.lang.Boolean"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "bigint(20) unsigned",
+        "javaType" : "java.lang.Long"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "int(11) unsigned",
+        "javaType" : "java.lang.Integer"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "tinyint(3) unsigned",
+        "javaType" : "java.lang.Integer"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "int(10) unsigned",
+        "javaType" : "java.lang.Integer"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "smallint(4) unsigned",
+        "javaType" : "java.lang.Integer"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "tinyint(4) unsigned",
+        "javaType" : "java.lang.Integer"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "tinyint(2) unsigned",
+        "javaType" : "java.lang.Integer"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "float(10,2)",
+        "javaType" : "java.lang.Float"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "float",
+        "javaType" : "java.lang.String"
+      }, {
+        "matchType" : "ORDINARY",
+        "columnType" : "json",
+        "javaType" : "java.lang.String"
+      } ]
     }
   },
   "template" : {
@@ -263,7 +238,7 @@
         "value" : "##针对Mybatis 进行支持，主要用于生成xml文件\n#foreach($column in $tableInfo.fullColumn)\n    ##储存列类型\n    $tool.call($column.ext.put(\"sqlType\", $tool.getField($column.obj.dataType, \"typeName\")))\n    #if($tool.newHashSet(\"java.lang.String\").contains($column.type))\n        #set($jdbcType=\"VARCHAR\")\n    #elseif($tool.newHashSet(\"java.lang.Boolean\", \"boolean\").contains($column.type))\n        #set($jdbcType=\"BOOLEAN\")\n    #elseif($tool.newHashSet(\"java.lang.Byte\", \"byte\").contains($column.type))\n        #set($jdbcType=\"BYTE\")\n    #elseif($tool.newHashSet(\"java.lang.Integer\", \"int\", \"java.lang.Short\", \"short\").contains($column.type))\n        #set($jdbcType=\"INTEGER\")\n    #elseif($tool.newHashSet(\"java.lang.Long\", \"long\").contains($column.type))\n        #set($jdbcType=\"INTEGER\")\n    #elseif($tool.newHashSet(\"java.lang.Float\", \"float\", \"java.lang.Double\", \"double\").contains($column.type))\n        #set($jdbcType=\"NUMERIC\")\n    #elseif($tool.newHashSet(\"java.util.Date\", \"java.sql.Timestamp\", \"java.time.Instant\", \"java.time.LocalDateTime\", \"java.time.OffsetDateTime\", \"\tjava.time.ZonedDateTime\").contains($column.type))\n        #set($jdbcType=\"TIMESTAMP\")\n    #elseif($tool.newHashSet(\"java.sql.Date\", \"java.time.LocalDate\").contains($column.type))\n        #set($jdbcType=\"TIMESTAMP\")\n    #else\n        ##其他类型\n        #set($jdbcType=\"VARCHAR\")\n    #end\n    $tool.call($column.ext.put(\"jdbcType\", $jdbcType))\n#end\n\n##定义宏，查询所有列\n#macro(allSqlColumn)#foreach($column in $tableInfo.fullColumn)$column.obj.name#if($velocityHasNext), #end#end#end\n"
       }, {
         "name" : "jadeSupport.vm",
-        "value" : "##针对Jade 进行支持，主要用于生成DAO文件\n#foreach($column in $tableInfo.fullColumn)\n    ##储存列类型\n    $tool.call($column.ext.put(\"sqlType\", $tool.getField($column.obj.dataType, \"typeName\")))\n    #if($tool.newHashSet(\"java.lang.String\").contains($column.type))\n        #set($jdbcType=\"VARCHAR\")\n    #elseif($tool.newHashSet(\"java.lang.Boolean\", \"boolean\").contains($column.type))\n        #set($jdbcType=\"BOOLEAN\")\n    #elseif($tool.newHashSet(\"java.lang.Byte\", \"byte\").contains($column.type))\n        #set($jdbcType=\"BYTE\")\n    #elseif($tool.newHashSet(\"java.lang.Integer\", \"int\", \"java.lang.Short\", \"short\").contains($column.type))\n        #set($jdbcType=\"INTEGER\")\n    #elseif($tool.newHashSet(\"java.lang.Long\", \"long\").contains($column.type))\n        #set($jdbcType=\"INTEGER\")\n    #elseif($tool.newHashSet(\"java.lang.Float\", \"float\", \"java.lang.Double\", \"double\").contains($column.type))\n        #set($jdbcType=\"NUMERIC\")\n    #elseif($tool.newHashSet(\"java.util.Date\", \"java.sql.Timestamp\", \"java.time.Instant\", \"java.time.LocalDateTime\",\n        \"java.time.OffsetDateTime\", \"\tjava.time.ZonedDateTime\").contains($column.type))\n        #set($jdbcType=\"TIMESTAMP\")\n    #elseif($tool.newHashSet(\"java.sql.Date\", \"java.time.LocalDate\").contains($column.type))\n        #set($jdbcType=\"TIMESTAMP\")\n    #else\n        ##其他类型\n        #set($jdbcType=\"VARCHAR\")\n    #end\n    $tool.call($column.ext.put(\"jdbcType\", $jdbcType))\n#end\n\n##定义宏，查询所有列\n#macro(allSqlColumn)#foreach($column in $tableInfo.fullColumn)$column.obj.name#if($velocityHasNext), #end#end#end\n"
+        "value" : "##针对Jade 进行支持，主要用于生成DAO文件\n#foreach($column in $tableInfo.fullColumn)\n    ##储存列类型\n    $tool.call($column.ext.put(\"sqlType\", $tool.getField($column.obj.dataType, \"typeName\")))\n    #if($tool.newHashSet(\"java.lang.String\").contains($column.type))\n        #set($jdbcType=\"VARCHAR\")\n    #elseif($tool.newHashSet(\"java.lang.Boolean\", \"boolean\").contains($column.type))\n        #set($jdbcType=\"BOOLEAN\")\n    #elseif($tool.newHashSet(\"java.lang.Byte\", \"byte\").contains($column.type))\n        #set($jdbcType=\"BYTE\")\n    #elseif($tool.newHashSet(\"java.lang.Integer\", \"int\", \"java.lang.Short\", \"short\").contains($column.type))\n        #set($jdbcType=\"INTEGER\")\n    #elseif($tool.newHashSet(\"java.lang.Long\", \"long\").contains($column.type))\n        #set($jdbcType=\"INTEGER\")\n    #elseif($tool.newHashSet(\"java.lang.Float\", \"float\", \"java.lang.Double\", \"double\").contains($column.type))\n        #set($jdbcType=\"NUMERIC\")\n    #elseif($tool.newHashSet(\"java.util.Date\", \"java.sql.Timestamp\", \"java.time.Instant\", \"java.time.LocalDateTime\",\n        \"java.time.OffsetDateTime\", \"\tjava.time.ZonedDateTime\").contains($column.type))\n        #set($jdbcType=\"TIMESTAMP\")\n    #elseif($tool.newHashSet(\"java.sql.Date\", \"java.time.LocalDate\").contains($column.type))\n        #set($jdbcType=\"TIMESTAMP\")\n    #else\n        ##其他类型\n        #set($jdbcType=\"VARCHAR\")\n    #end\n    $tool.call($column.ext.put(\"jdbcType\", $jdbcType))\n#end\n\n##定义宏，查询所有列\n#macro(allSqlColumn)\n    #foreach($column in $tableInfo.fullColumn)\n        #if($column.obj.name != \"add_user_id\" && $column.obj.name != \"update_user_id\" && $column.obj.name != \"deleted\" && $column.obj.name != \"add_time\" && $column.obj.name != \"id\")\n            $column.obj.name#if($velocityHasNext), #end\n        #end\n    #end\n#end"
       } ]
     }
   }

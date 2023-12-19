@@ -165,7 +165,8 @@ public class CodeGenerateServiceImpl implements CodeGenerateService {
                     if (item.get(0).equals(template.getName())) {
                         Module module = (Module) item.get(1);
                         tableInfo.setSaveModelName(module.getName());
-                        tableInfo.setSavePath(module.getModuleFile().getParent().getPath() + "/" + item.get(2));
+                        String modulePath = this.moduleManager.findModuleByName(module.getName()).getModuleFile().getParent().getPath();
+                        tableInfo.setSavePath(modulePath + "/" + item.get(2));
                     }
                 });
                 Callback callback = new Callback();

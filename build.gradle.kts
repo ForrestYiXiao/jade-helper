@@ -21,7 +21,6 @@ repositories {
 intellij {
     version.set("2021.3")
     type.set("IU")  // Target IDE Platform
-
     plugins.set(listOf("com.intellij.java", "com.intellij.database"))
 
 }
